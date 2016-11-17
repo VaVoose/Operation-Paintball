@@ -11,7 +11,14 @@ public class Movement : MonoBehaviour {
 	public float startAccel = 0.0f;
 
 	void FixedUpdate(){
-		if (currentSpeed != 0 !Input.GetButton ("Forward") !Input.GetButton ("Reverse");
+        if (currentSpeed != 0 && Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.S))
+        {
+            currentSpeed = Mathf.Lerp(currentSpeed, startAccel, Time.time * decceleration);
+            acceleration = 0;
+        }
+        else {
+            if (currentSpeed < Max)
+        }
 
 
 		 
