@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Main : MonoBehaviour {
+public class Marker : MonoBehaviour {
 
 	public GameObject paintballPrefab;
 
@@ -17,5 +17,5 @@ public class Main : MonoBehaviour {
 			goPaintball.GetComponent<Rigidbody> ().AddRelativeForce (new Vector3 (0, 0, 5000));
 		}
 	}
-		
+
 }
