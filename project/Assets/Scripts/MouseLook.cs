@@ -28,5 +28,7 @@ public class MouseLook : MonoBehaviour
 
 		Quaternion localRotation = Quaternion.Euler(rotX, rotY, 0.0f);
 		transform.rotation = localRotation;
+
+
 	}
 }
