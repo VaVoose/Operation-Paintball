@@ -63,6 +63,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
             // the jump state needs to read here to make sure it is not missed
+			if (Input.GetKey(KeyCode.LeftControl)) {
+				print ("Ctrl is pressed");
+			}
             if (!m_Jump)
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
