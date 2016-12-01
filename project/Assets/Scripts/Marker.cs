@@ -7,6 +7,11 @@ public class Marker : MonoBehaviour {
 
 	void Update(){
 		GameObject goPaintball;
+		/*CharacterController controller = gameObject. ();
+		Vector3 playerVelocity = new Vector3 (controller.velocity.x, controller.velocity.y, controller.velocity.z);
+		float playerSpeed = controller.velocity.magnitude; 
+		*/
+
 
 
 		if (Input.GetMouseButtonDown (0)) {

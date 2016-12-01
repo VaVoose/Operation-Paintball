@@ -8,6 +8,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
     [RequireComponent(typeof (AudioSource))]
+
     public class FirstPersonController : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
@@ -41,6 +42,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+		//
+
+		//
 
         // Use this for initialization
         private void Start()
@@ -57,15 +61,33 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
         }
 
+		public float speed(){
+			CharacterController controller = GetComponent<CharacterController> ();
+			Vector3 playerVelocity = new Vector3 (controller.velocity.x, controller.velocity.y, controller.velocity.z);
+			float speed = controller.velocity.magnitude;
+
+			return speed;
+		}
 
         // Update is called once per frame
         private void Update()
         {
             RotateView();
+			float currentSpeed = speed ();
+			print (currentSpeed);
+
+			// code for to get the players speed
+
+
+			//
             // the jump state needs to read here to make sure it is not missed
+
+			//code for the crouch feature
 			if (Input.GetKey(KeyCode.LeftControl)) {
 				print ("Ctrl is pressed");
 			}
+			//
+
             if (!m_Jump)
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
