@@ -28,9 +28,33 @@ var drawCrosshair = true;
      lineStyle = GUIStyle();
      lineStyle.normal.background = tex;
  }
+
+ /*public float speed(){
+
+		float curSpread = GameObject.Find("FirstPersonCharacter").GetComponent
+
+		CharacterController controller = GameObject.Find("FPSController").GetComponent<CharacterController> ();
+		Vector3 playerVelocity = new Vector3 (controller.velocity.x, controller.velocity.y, controller.velocity.z);
+		float speed = controller.velocity.magnitude;
+
+		return speed;
+	}
+*/
+
+ function Speed() {
+ 	CharacterController controller = GameObject.Find("FPSController").GetComponent(CharacterController)();
+	Vector3 playerVelocity = new Vector3(controller.velocity.x, controller.velocity.y, controller.velocity.z);
+	float speed = controller.velocity.magnitude;
+
+	return speed;
+ }
+
  function Update (){
  	//Input.GetMouseButtonDown (0)
      //if(Input.GetButton("Fire1")){
+     var curSpeed = speed();
+     print(curSpeed);
+
      if(Input.GetMouseButtonDown (0)){
          //spread.spread += spread.spreadPerSecond * Time.deltaTime;       //Incremente the spread
          spread.spread += spreadPerShot;
